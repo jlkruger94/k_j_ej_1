@@ -4,7 +4,7 @@
   <name>k_j_ej_1</name>
   <version>0.0.0</version>
   <description>ROS 2 Jazzy counter demo package</description>
-  <maintainer email="k_j_ej_1@example.com">k_j_ej_1</maintainer>
+  <maintainer email="jlkruger94@gmail.com">k_j_ej_1</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
