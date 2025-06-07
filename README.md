@@ -1,6 +1,26 @@
 # ROS 2 Counter Demo Package
 
-This ROS 2 package demonstrates basic publisher-subscriber communication with a counter example.
+Este repositorio contiene el código funcional del ejercio 1 de programación solicitado por la catedra:
+
+Proveer un paquete de ROS con un launchfile con dos nodos:
+
+Un nodo publica cinco veces por segundo un contador. Este nodo tiene un servicio que resetea su contador.
+Un segundo nodo está suscrito al primero y cuando el mensaje con el contador llega a 50 (cada 10 segundos), resetea el contador del nodo.
+
+Ambos nodos pueden configurar por parámetros:
+
+Nodo publicando:
+- Frecuencia que publica.
+- Cantidad máxima que publica.
+Nodo suscrito:
+- A qué número reinicia el contador del nodo.
+
+Launchfile que lance todo y permita configurar la frecuencia y el número en el que se reinicia como argumentos.
+
+## Authors
+
+- José Luis Krüger
+- Juan Manuel Guariste
 
 ## Prerequisites
 
@@ -13,7 +33,7 @@ This ROS 2 package demonstrates basic publisher-subscriber communication with a 
 ```bash
 cd ~/ros2_ws
 mkdir -p src
-git clone <repository-url> src/clase5
+git clone <repository-url> src/j_k_ej_1
 ```
 
 2. Build the package:
@@ -46,6 +66,11 @@ The counter_publisher node manages and publishes an incrementing counter value.
   - Time interval between counter value publications (in seconds)
   - Can be set via launch file or command line
   - Example: `ros2 run clase5 counter_publisher timer_period:=0.5`
+
+- `reset_arg` (float, default: 50)
+  - Maximum count value at which the counter will be reset
+  - Can be set via launch file or command line
+  - Example: `ros2 run clase5 counter_suscriber reset_arg:=5`
 
 #### Services
 
